@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-export default function ServiceSelect({ children }) {
-  const [Service, setService] = useState(0);
+export default function ServiceSelect({ children, Service, setService }) {
   return (
     <div>
       <span>{children}</span>

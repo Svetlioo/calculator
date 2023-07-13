@@ -8,6 +8,12 @@ export default function App() {
   const [Bill, setBill] = useState("");
   const [Service1, setService1] = useState(0);
   const [Service2, setService2] = useState(0);
+
+  function onReset() {
+    setService1(0);
+    setService2(0);
+    setBill("");
+  }
   return (
     <div>
       <BillInput Bill={Bill} setBill={setBill} />
@@ -18,7 +24,7 @@ export default function App() {
         How did your friend like the service
       </ServiceSelect>
       <TotalBill Service1={Service1} Service2={Service2} Bill={Bill} />
-      <Reset />
+      <Reset onReset={onReset} />
     </div>
   );
 }

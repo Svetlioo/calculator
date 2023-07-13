@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import BillInput from "./BillInput";
+import ServiceSelect from "./ServiceSelect";
+import TotalBill from "./TotalBill";
+import Reset from "./Reset";
 
-function App() {
+export default function App() {
+  const [Bill, setBill] = useState("");
+  const [Service1, setService1] = useState(0);
+  const [Service2, setService2] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BillInput Bill={Bill} setBill={setBill} />
+      <ServiceSelect Service={Service1} setService={setService1}>
+        How did you like the service
+      </ServiceSelect>
+      <ServiceSelect Service={Service2} setService={setService2}>
+        How did your friend like the service
+      </ServiceSelect>
+      <TotalBill Service1={Service1} Service2={Service2} Bill={Bill} />
+      <Reset />
     </div>
   );
 }
-
-export default App;

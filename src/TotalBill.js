@@ -4,7 +4,7 @@ export default function TotalBill({ Bill, Service1, Service2 }) {
     Bill && (
       <p>
         <strong>
-          You pay ${tip + Bill} (${tip} tip)
+          You pay ${tip + Bill} (${Bill} + ${tip} tip)
         </strong>
       </p>
     )

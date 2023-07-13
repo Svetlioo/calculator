@@ -3,10 +3,12 @@ export default function Billinput({ Bill, setBill }) {
     <div>
       <span>How much was the bill?</span>
       <input
-        type="text"
+        type="number"
         placeholder="Bill value"
         value={Bill}
-        onChange={(e) => setBill(Number(e.target.value))}
+        onChange={(e) => {
+          setBill(Number(e.target.value));
+        }}
       ></input>
     </div>
   );

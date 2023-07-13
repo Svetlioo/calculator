@@ -18,13 +18,13 @@ export default function App() {
     <div>
       <BillInput Bill={Bill} setBill={setBill} />
       <ServiceSelect Service={Service1} setService={setService1}>
-        How did you like the service
+        How did you like the service?
       </ServiceSelect>
       <ServiceSelect Service={Service2} setService={setService2}>
-        How did your friend like the service
+        How did your friend like the service?
       </ServiceSelect>
       <TotalBill Service1={Service1} Service2={Service2} Bill={Bill} />
-      <Reset onReset={onReset} />
+      {Bill > 0 && <Reset onReset={onReset} />}
     </div>
   );
 }
